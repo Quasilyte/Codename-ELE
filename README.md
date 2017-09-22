@@ -74,3 +74,9 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 **pros**:
 + Makes Emacs Lisp packages with proper prefix ("namespace") development less painful
 + Package renaming is easier
+
+### Potential features
+
+List that enumerates features that may be included.
+
+- Reader macros
