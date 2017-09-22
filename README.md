@@ -69,3 +69,7 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 ;;    - Mangling can be disabled for symbol by using "&" prefix: `(&foo 1)'
 ;;      calls global `foo'.
 ```
+
+**pros**:
++ Makes Emacs Lisp packages with proper prefix ("namespace") development less painful
++ Package renaming is easier
