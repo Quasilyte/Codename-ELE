@@ -75,6 +75,41 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 + Makes Emacs Lisp packages with proper prefix ("namespace") development less painful
 + Package renaming is easier
 
+### Clojure-style control structures
+
+```elisp
+;; Clojure-style `cond'.
+(%cond (= x 1) "one"
+       (= x 2) (progn (message "multiple forms")
+                      "two")
+       t "?")
+
+;; Emacs Lisp `cond'.
+(cond ((= x 1) "one")
+      ((= x 2)
+       (message "multiple forms")
+       "two")
+      (t "?"))
+```
+
+```elisp
+;; Clojure-style `case'.
+(%case x
+   1 "one"
+   2 "two"
+   "?")
+
+;; Emacs Lisp closest attempt.
+(pcase x
+  (`1 "one")
+  (`2 "two")
+  (_ "?"))
+```
+
+**pros**:
++ Prettier (look at formatting)
++ Less parentheses
+
 ### Potential features
 
 List that enumerates features that may be included.
