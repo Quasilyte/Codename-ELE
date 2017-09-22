@@ -46,8 +46,9 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 ### Package prefix omission
 
 ```elisp
-;; With package prefix omission.
 (defconst global 1)
+
+;; With package prefix omission.
 (%defconst my-pkg pkg-local 1)
 (%defun my-pkg add (x y) (+ x y))
 (%defun my-pkg bar (x)
