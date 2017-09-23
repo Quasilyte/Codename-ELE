@@ -115,3 +115,4 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 List that enumerates features that may be included.
 
 - Reader macros
+- Imperative `return` statement (better than `cl-return`)
