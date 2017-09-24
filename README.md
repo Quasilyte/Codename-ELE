@@ -110,9 +110,35 @@ Work in progress. Details will be uncovered later, when planned concepts are imp
 + Prettier (look at formatting)
 + Less parentheses
 
+### Imperative return statement
+
+```elisp
+;; With `return'.
+(defun bool-list? (xs)
+  (dolist (x xs)
+    (unless (booleanp x)
+      (%return nil)))
+  t)
+
+;; Without `return'.
+;; Also without recursion because it is very inefficient
+;; and restrictive in Emacs Lisp.
+(defun bool-list? (xs)
+  (let ((x nil)
+        (ret t))
+    (while (and (setq x (pop xs))
+                ret)
+      (unless (booleanp x)
+        (setq ret nil)))
+    ret))
+```
+
+**pros**:
++ Makes imperative-style Emacs Lisp less crippled
++ Efficient
+
 ### Potential features
 
 List that enumerates features that may be included.
 
 - Reader macros
-- Imperative `return` statement (better than `cl-return`)
